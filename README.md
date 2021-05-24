@@ -44,8 +44,8 @@ $ http://localhost:3333/seed
 
 ### Funcionalidade de pagamento:
 Na funcionalidade de pagamento o campo "Código" é de preenchimento opcional mas existem algumas contas a pargar, para descobrir quais são basta digitar um dos códigos abaixo:
--[7947212](?????)
--[4721930](?????)
--[583010](?????)
+<p>7947212</p>
+<p>4721930</p>
+<p>583010</p>
 
 
