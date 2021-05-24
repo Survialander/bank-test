@@ -1,10 +1,11 @@
 {
   "type": "postgres",
   "port": 5432,
-  "host": "localhost",
+  "host": "postgres",
   "username": "docker",
   "password": "root",
   "database": "bank-database",
+  "synchronize": "true",
   "entities": ["./src/app/entities/*.ts"],
   "migrations": ["./src/database/migrations/*.ts"],
   "cli": {

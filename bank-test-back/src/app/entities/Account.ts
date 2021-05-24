@@ -28,9 +28,6 @@ class Account {
   @OneToOne(() => User, (user: User) => user.account_id)
   public user: User;
 
-  @OneToMany(() => Transaction, (transaction: Transaction) => transaction.account_number)
-  public transactions: Transaction;
-
   @BeforeInsert()
   addId(): void {
     this.id = v4();

@@ -15,7 +15,7 @@ class Transaction {
   @Column()
   type: string;
 
-  @Column('decimal', { precision: 5, scale: 2 })
+  @Column('decimal', { precision: 10, scale: 2 })
   amount: number;
 
   @Column()
@@ -23,10 +23,6 @@ class Transaction {
 
   @CreateDateColumn()
   created_at: Date;
-
-  @ManyToOne(() => Account, (account: Account) => account.number)
-  @JoinColumn({ name: 'account_number' })
-  public account: Account;
 
   @BeforeInsert()
   addId(): void {

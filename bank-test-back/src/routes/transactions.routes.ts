@@ -10,7 +10,6 @@ transactionsRouter.get('/', async (request, response) => {
   try {
     let { account_number } = request.query;
     account_number = String(account_number);
-
     const transactionRepo = getRepository(Transaction);
 
     const transactions = await transactionRepo.find({ account_number });

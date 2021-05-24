@@ -1,7 +1,6 @@
-FROM node 
-WORKDIR /usr/app
-COPY package.json /usr/app 
+FROM node
+WORKDIR /app
+COPY package.json /app 
 RUN yarn && yarn cache clean
-COPY . /usr/app 
-RUN yarn typeorm migration:run
+COPY . /app 
 CMD ["yarn", "dev"]

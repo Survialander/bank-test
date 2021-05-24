@@ -22,14 +22,16 @@ class AccountsRepository extends Repository<Account> {
 
   public async decreaseBalance({ account_number, amount }: ModifyBalanceDTO): Promise<Account> {
     const account = await this.findOne({ number: account_number });
-    account.amount -= amount;
+    const accountAmountNumber = Number(account.amount);
+    account.amount = accountAmountNumber - amount;
 
     return this.save(account);
   }
 
   public async increaseBalance({ account_number, amount }: ModifyBalanceDTO): Promise<Account> {
     const account = await this.findOne({ number: account_number });
-    account.amount += amount;
+    const accountAmountNumber = Number(account.amount);
+    account.amount = accountAmountNumber + amount;
 
     return this.save(account);
   }
