@@ -1,0 +1,15 @@
+export default jest.mock('typeorm', () => ({
+  getRepository: jest.fn(),
+  getCustomRepository: jest.fn(),
+  Repository: jest.fn(),
+  EntityRepository: jest.fn(),
+  PrimaryGeneratedColumn: jest.fn(),
+  Column: jest.fn(),
+  Entity: jest.fn(),
+  CreateDateColumn: jest.fn(),
+  ManyToOne: jest.fn(),
+  JoinColumn: jest.fn(),
+  BeforeInsert: jest.fn(),
+  OneToOne: jest.fn(),
+  OneToMany: jest.fn(),
+}));
