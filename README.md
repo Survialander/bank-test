@@ -17,7 +17,7 @@ Para começar, você vai precisar ter instalado em sua máquina as seguintes fer
 
 ```bash
 # Clone este repositório
-$ git clone <https://github.com/Survialander/bank-test>
+$ git clone https://github.com/Survialander/bank-test
 
 # Acesse a pasta do projeto no terminal/cmd
 $ cd bank-test
@@ -27,4 +27,4 @@ $ docker-compose up
 
 # Acesse a seguinte url em seu navegador
 ## Essa url irá rodar os seeds e irá redirecionar para o client
-$ <http://localhost:3333/seed>
+$ http://localhost:3333/seed
