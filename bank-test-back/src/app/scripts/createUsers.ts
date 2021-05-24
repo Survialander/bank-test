@@ -32,15 +32,19 @@ class CreateUsers {
     const usersRepo = getRepository(User);
 
     accounts.forEach(async (account, i) => {
-      const accountEntity = accountsRepo.create(account);
-      accountsRepo.save(accountEntity)
-        .then(async (data) => {
-          users[i].account_id = data.id;
+      const userExists = await accountsRepo.findOne({ number: account.number });
 
-          const user = usersRepo.create(users[i]);
+      if (!userExists) {
+        const accountEntity = accountsRepo.create(account);
+        accountsRepo.save(accountEntity)
+          .then(async (data) => {
+            users[i].account_id = data.id;
 
-          return usersRepo.save(user);
-        });
+            const user = usersRepo.create(users[i]);
+
+            return usersRepo.save(user);
+          });
+      }
     });
   }
 }
