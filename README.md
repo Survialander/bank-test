@@ -19,8 +19,11 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 - [React](https://pt-br.reactjs.org/)
 - [Node.js](https://nodejs.org/en/)
+- [ExpressJS](https://expressjs.com/pt-br/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [TypeOrm](https://typeorm.io/)
+- [Docker](https://www.docker.com)
+- [Docker-compose](https://docs.docker.com/compose/)
 
 ### 🎲 Rodando a aplicação:
 
@@ -40,6 +43,15 @@ $ http://localhost:3333/seed
 
 # Após o passo anterior basta acessar a seguinte url
 & http://localhost:8080
+```
+
+### Executando Testes:
+```bash
+# Testes no backend
+$ docker-compose exec api yarn test
+
+#Testes do frontend
+$ docker-compose exec client yarn test
 ```
 
 ### Funcionalidade de pagamento:
