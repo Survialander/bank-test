@@ -11,11 +11,11 @@ export function Summary() {
 
   const summary = transactions.reduce((acc, transaction) => {
     if(transaction.type === 'deposit') {
-      acc.income += transaction.amount;
-      acc.total += transaction.amount;
+      acc.income += Number(transaction.amount);
+      acc.total += Number(transaction.amount);
     } else {
-      acc.outcome -= transaction.amount;
-      acc.total -= transaction.amount;
+      acc.outcome -= Number(transaction.amount);
+      acc.total -= Number(transaction.amount);
     }
 
     return acc;

@@ -9,7 +9,9 @@ routes.use('/users', userRouter);
 routes.use('/transactions', transactionsRouter);
 routes.get('/seed', async (request, response) => {
   await createUsers.execute();
-  response.redirect('http://localhost:8080');
+  response.json({
+    message: 'Seeder executado com sucesso, acesse o endereço http://localhost:8080.',
+  });
 });
 
 export default routes;
