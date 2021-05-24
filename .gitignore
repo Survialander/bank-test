@@ -1,0 +1,6 @@
+./bank-test-back/node_modules
+./bank-test-back/dist
+./bank-test-back/coverage
+
+./bank-test-client/node_modules
+./bank-test-client/coverage

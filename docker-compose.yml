@@ -1,0 +1,38 @@
+version: "3.7"
+
+services:
+  postgres:
+    image: postgres
+    container_name: database
+    restart: always 
+    environment: 
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=bank-database
+    volumes:
+      - pgdata:/data/postgres
+    network_mode: host
+
+  api:
+    build: ./bank-test-back
+    container_name: bank-api
+    volumes: 
+      - ./bank-test-back:/usr/app
+    depends_on: 
+      - postgres
+    network_mode: host
+
+  client:
+    build: ./bank-test-client
+    container_name: bank-client
+    ports:
+      - 8080:3000
+    volumes: 
+      - ./bank-test-client:/usr/app
+    depends_on: 
+      - api
+
+volumes:
+  pgdata:
+    driver: local
+      
