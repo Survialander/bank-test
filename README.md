@@ -28,3 +28,4 @@ $ docker-compose up
 # Acesse a seguinte url em seu navegador
 ## Essa url irá rodar os seeds e irá redirecionar para o client
 $ http://localhost:3333/seed
+´´´

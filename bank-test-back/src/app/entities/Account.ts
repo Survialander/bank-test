@@ -19,7 +19,7 @@ class Account {
   @Column()
   number: string;
 
-  @Column('decimal', { precision: 5, scale: 2 })
+  @Column('decimal', { precision: 10, scale: 2 })
   amount: number;
 
   @CreateDateColumn()
