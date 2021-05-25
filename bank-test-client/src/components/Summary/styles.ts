@@ -43,6 +43,7 @@ export const Grid = styled.div`
     gap: 1rem;
     margin-right: -1rem;
     div {
+      padding: 1rem 1rem;
       min-width: 250px;
     }
   }
