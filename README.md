@@ -42,7 +42,7 @@ $ docker-compose up
 $ http://localhost:3333/seed
 
 # Após o passo anterior basta acessar a seguinte url
-& http://localhost:8080
+$ http://localhost:8080
 ```
 
 ### Executando Testes:
