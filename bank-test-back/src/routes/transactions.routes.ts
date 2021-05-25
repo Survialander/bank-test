@@ -12,7 +12,12 @@ transactionsRouter.get('/', async (request, response) => {
     account_number = String(account_number);
     const transactionRepo = getRepository(Transaction);
 
-    const transactions = await transactionRepo.find({ account_number });
+    const transactions = await transactionRepo.find({
+      where: { account_number },
+      order: {
+        created_at: 'DESC',
+      },
+    });
 
     return response.json(transactions);
   } catch (error) {
